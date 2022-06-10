@@ -12,7 +12,9 @@ Scale Test Setup: https://github.com/HashiCorp-CSA/demo-tfe-scale-test-setup
 
 ## Getting Started & Documentation
 
-To use this repository, follow these steps:
+To use this repository, there are two options. PowerShell or Bash depending on what you are most comfortable with. The PowerShell options provides more control over the rate of applies, whereas the bash version is single threaded and just kicks off one after the other.
+
+### PowerShell
 
 1. Clone the repository locally.
 2. Have your instance of Terraform Enterprise spun up and ready for use.
@@ -28,6 +30,21 @@ To use this repository, follow these steps:
 6. For example on macOS, you can run the script like this: `pwsh ./KickRuns.ps1 -count 1600 -workspaceNamePrefix "test-agents-" -terraformUrl "https://mydemotfe.com" -terraformToken "<token>" -organizationName "my-organization"`
 
 The runs will now kick off and you can observe them in the Terraform Enterprise UI. You can optionally run the `Stats.ps1` script to see how many runs are in progress via the Terraform Enterprise API.
+
+### Bash
+
+1. Clone the repository locally.
+2. Have your instance of Terraform Enterprise spun up and ready for use.
+2. Run the code in the (sister repository)[https://github.com/HashiCorp-CSA/demo-tfe-scale-test-setup] to generate the agents in AWS ECS and the workspaces and agent pools in Terraform Enterprise.
+3. Generate a user or team token in Terraform Enterprise and store it in a file called `temptoken.txt` in the root of the repository or save it to pass as a command line argument.
+4. Ensure you have `jq` installed and any other dependencies the script requires.
+5. Run the bash script called `KickRuns.sh` passing in the relevant parameters for your setup. The most important being:
+    1. `c`: The number of workspaces to run.
+    3. `w`: The prefix of your workspaces.
+    4. `u`: The URL of your instance of Terraform Enterprise.
+    5. `t`: The token for Terraform Enterprise (unless using `temptoken.txt`).
+    6. `o`: The name of your organization in Terraform Enterprise.
+6. For example you can run the script like this: `./KickRuns.sh -c 1600 -w "test-agents-" -u "https://mydemotfe.com" -t "<token>" -o "my-organization"`
 
 ## Contributing
 
