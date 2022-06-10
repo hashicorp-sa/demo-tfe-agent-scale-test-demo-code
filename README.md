@@ -44,7 +44,8 @@ The runs will now kick off and you can observe them in the Terraform Enterprise 
     4. `u`: The URL of your instance of Terraform Enterprise.
     5. `t`: The token for Terraform Enterprise (unless using `temptoken.txt`).
     6. `o`: The name of your organization in Terraform Enterprise.
-6. For example you can run the script like this: `./KickRuns.sh -c 1600 -w "test-agents-" -u "https://mydemotfe.com" -t "<token>" -o "my-organization"`
+    7. `r`: The workspace run duration e.g. 120s. This needs to be longer for the bash version as it is single threaded and takes far longer to run all the workspaces.
+6. For example you can run the script like this: `./KickRuns.sh -c 1600 -w "test-agents-" -u "https://mydemotfe.com" -t "<token>" -o "my-organization" -r "120s"`
 
 ## Contributing
 

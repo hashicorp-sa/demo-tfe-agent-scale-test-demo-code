@@ -35,3 +35,4 @@ temptoken.txt
 terraform.zip
 terraform
 config.tar.gz
+main_test.tf
