@@ -8,7 +8,7 @@ The PowerShell script uses the Terraform Enterprise API to kick off runs in para
 
 ## Related Repositories
 
-Scale Test Setup: [https://github.com/HashiCorp-CSA/demo-tfe-scale-test-setup](https://github.com/HashiCorp-CSA/demo-tfe-agent-scale-test-setup)
+Scale Test Setup: [demo-tfe-agent-scale-test-setup](https://github.com/HashiCorp-CSA/demo-tfe-agent-scale-test-setup)
 
 ## Getting Started & Documentation
 
